@@ -17,8 +17,8 @@ function obtenirCouleurContraste(couleur) {
 }
 
 // Fonction pour positionner l'élément aléatoirement et changer sa couleur
-function positionnerElementAleatoire() {
-    const element = document.querySelector('#monElement'); 
+function positionnerElementAleatoire(monElement) {
+    const element = document.querySelector(monElement); 
 
     // Obtenir la taille de la fenêtre de la page (viewport)
     const largeurFenetre = window.innerWidth;
@@ -29,6 +29,7 @@ function positionnerElementAleatoire() {
     const positionY = Math.random() * (hauteurFenetre - element.offsetHeight); // Hauteur disponible
 
     // Appliquer cette position à l'élément
+    element.style.position = 'absolute';
     element.style.left = `${positionX}px`;
     element.style.top = `${positionY}px`;
 
@@ -44,9 +45,10 @@ function positionnerElementAleatoire() {
 }
 
 // Appel initial pour positionner l'élément
-positionnerElementAleatoire();
+positionnerElementAleatoire('#monElement');
 
 // Bonus: Repositionner l'élément à chaque clic
 document.querySelector('#monElement').addEventListener('click', function() {
-    positionnerElementAleatoire();
+    positionnerElementAleatoire('#monElement');
 });
+
