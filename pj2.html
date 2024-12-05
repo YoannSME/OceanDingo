@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position et Couleur Aléatoire</title>
+    <style>
+        /* Style de base de la page */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Menu déroulant */
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10; /* Assure que le menu est au-dessus du bouton */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Élément à positionner de façon aléatoire */
+        #monElement {
+            width: 100px;
+            height: 100px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;  /* Nécessaire pour que le bouton soit positionné */
+            z-index: 5;  /* Assure qu'il reste cliquable, au-dessus du fond mais sous le menu */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu déroulant -->
+    <nav>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Élément à positionner -->
+    <div id="monElement">Cliquez moi!</div>
+
+    <script src="pj2.js" defer></script>
+
+</body>
+</html>
